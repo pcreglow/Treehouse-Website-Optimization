@@ -37,6 +37,12 @@ gulp.task("sassCompile", function() {
   .pipe(gulp.dest('css'));
 });
 
+gulp.task("build", ['scriptsConcat', 'sassCompile'], function() {
+  return gulp.src(["css/application.css", "js/app.min.js", 'index.html',
+                   "img/**"], { base: './'})
+            .pipe(gulp.dest('dist'));
+});
+
 gulp.task("default", function() {
   gulp.start('build');
 });
