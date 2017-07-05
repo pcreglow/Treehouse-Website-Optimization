@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/pcreglow/Treehouse-Website-Optimization/issues"
   },
-  "homepage": "https://github.com/pcreglow/Treehouse-Website-Optimization#readme"
+  "homepage": "https://github.com/pcreglow/Treehouse-Website-Optimization#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1"
+  }
 }
