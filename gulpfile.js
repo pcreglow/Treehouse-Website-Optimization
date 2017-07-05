@@ -63,6 +63,6 @@ gulp.task("build", ['scriptsConcat', 'stylesConcat'], function() {
             .pipe(gulp.dest('dist'));
 });
 
-gulp.task("default", ["cleanFiles"] function() {
+gulp.task("default", ["cleanFiles"], function() {
   gulp.start('build');
 });
