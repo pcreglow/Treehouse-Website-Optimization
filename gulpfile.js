@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var maps = require('gulp-sourcemaps');
+var del = require('del');
 
 gulp.task("scriptsConcat", function() {
   return gulp.src([
@@ -52,12 +53,16 @@ gulp.task("stylesMinify", ["stylesConcat"], function() {
   .pipe(gulp.dest('css'));
 });
 
+gulp.task('cleanFiles', function() {
+  del(['dist', 'css/styles.css*', 'js/app*.js*']);
+})
+
 gulp.task("build", ['scriptsConcat', 'stylesConcat'], function() {
   return gulp.src(["css/styles.min.css", "js/app.min.js", 'index.html',
                    "img/**"], { base: './'})
             .pipe(gulp.dest('dist'));
 });
 
-gulp.task("default", function() {
+gulp.task("default", ["cleanFiles"] function() {
   gulp.start('build');
 });
