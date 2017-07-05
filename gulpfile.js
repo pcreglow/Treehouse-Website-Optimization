@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var sass = require('gulp-sass');
 
 gulp.task("scriptsConcat", function() {
   return gulp.src([
@@ -25,7 +26,11 @@ gulp.task("scriptsMinify", ["scriptsConcat"], function() {
   .pipe(gulp.dest('js'));
 });
 
-
+gulp.task("sassCompile", function() {
+  return gulp.src("scss/application.scss")
+  .pipe(sass())
+  .pipe(gulp.dest('css'));
+});
 
 gulp.task("default", function() {
   gulp.start('build');
