@@ -31,7 +31,7 @@ gulp.task("scriptsMinify", ["scriptsConcat"], function() {
 gulp.task("stylesConcat", function() {
   return gulp.src([
     'css/normalize.css',
-    'css/foundation.css'
+    'css/foundation.css',
     'css/basics.css',
     'css/menu.css',
     'css/hero.css',
