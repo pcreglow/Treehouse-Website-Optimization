@@ -6,6 +6,7 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var maps = require('gulp-sourcemaps');
 var del = require('del');
+var cleanCSS = require('gulp-clean-css');
 
 gulp.task("scriptsConcat", function() {
   return gulp.src([
@@ -48,7 +49,7 @@ gulp.task("stylesConcat", function() {
 
 gulp.task("stylesMinify", ["stylesConcat"], function() {
   return gulp.src("css/styles.css")
-  .pipe(uglify())
+  .pipe(cleanCSS())
   .pipe(rename('styles.min.css'))
   .pipe(gulp.dest('css'));
 });
