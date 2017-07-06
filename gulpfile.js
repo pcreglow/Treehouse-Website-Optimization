@@ -7,7 +7,13 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css');
 
 gulp.task('js', function() {
-  return gulp.src('js/*.js')
+  return gulp.src([
+    'js/jquery.js',
+    'js/fastclick.js',
+    'js/foundation.js',
+    'js/foundation.equalizer.js',
+    'js/foundation.reveal.js'
+  ])
   .pipe(uglify())
   .pipe(concat('app.min.js'))
   .pipe(gulp.dest('js'));
