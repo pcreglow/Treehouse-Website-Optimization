@@ -6,27 +6,6 @@ var gulp = require('gulp'),
     del = require('del'),
     cleanCSS = require('gulp-clean-css');
 
-// gulp.task("scriptsConcat", function() {
-//   return gulp.src([
-//     'js/jquery.js',
-//     'js/fastclick.js',
-//     'js/foundation.js',
-//     'js/foundation.equalizer.js',
-//     'js/foundation.reveal.js'
-//   ])
-//   .pipe(maps.init())
-//   .pipe(concat('app.js'))
-//   .pipe(maps.write('./'))
-//   .pipe(gulp.dest('js'));
-// });
-//
-// gulp.task("scriptsMinify", ["scriptsConcat"], function() {
-//   return gulp.src('js/app.js')
-//   .pipe(uglify())
-//   .pipe(concat('js/app.min.js'))
-//   .pipe(gulp.dest('js'));
-// });
-
 gulp.task('js', function() {
   return gulp.src('js/*.js')
   .pipe(uglify())
