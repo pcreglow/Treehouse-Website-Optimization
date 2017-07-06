@@ -25,7 +25,7 @@ gulp.task('cleanFiles', function() {
 });
 
 gulp.task("build", ['js', 'css'], function() {
-  return gulp.src(["css/styles.min.css", "js/app.min.js", 'index.html',
+  return gulp.src(["css/styles.min.css*", "js/app.min.js*", 'index.html',
                    "img/**"], { base: './'})
             .pipe(gulp.dest('dist'));
 });
